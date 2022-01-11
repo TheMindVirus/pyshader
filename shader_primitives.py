@@ -34,6 +34,19 @@ class fixed2:
     def v(self, value):
         self.two[1] = value
 
+    @property
+    def xy(self):
+        return self.two[:]
+    @xy.setter
+    def xy(self, value):
+        self.two[:] = value[:]
+    @property
+    def uv(self):
+        return self.two[:]
+    @uv.setter
+    def uv(self, value):
+        self.two[:] = value[:]
+
 class fixed4:
     def __init__(self, xr = 0.0, yg = 0.0, zb = 0.0, wa = 0.0):
         self.four = [xr, yg, zb, wa]
@@ -93,6 +106,32 @@ class fixed4:
     @a.setter
     def a(self, value):
         self.four[3] = value
+
+    @property
+    def rgb(self):
+        return self.four[:3]
+    @rgb.setter
+    def rgb(self, value):
+        self.four[:3] = value[:3]
+    @property
+    def xyz(self):
+        return self.four[:3]
+    @xyz.setter
+    def xyz(self, value):
+        self.four[:3] = value[:3]
+
+    @property
+    def rgba(self):
+        return self.four[:]
+    @rgba.setter
+    def rgba(self, value):
+        self.four[:] = value[:]
+    @property
+    def xyzw(self):
+        return self.four[:]
+    @xyzw.setter
+    def xyzw(self, value):
+        self.four[:] = value[:]
 
 class shaderdata:
     def copy(self):
